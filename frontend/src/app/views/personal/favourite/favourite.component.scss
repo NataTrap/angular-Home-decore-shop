@@ -1,0 +1,43 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.favourite {
+  padding-top: 50px;
+  padding-bottom: 110px;
+
+  .container {
+    .favourite-title {
+      @include head-lora-36;
+      color: $green-text-color;
+      margin-bottom: 35px;
+    }
+
+    .favourite-empty {
+      margin-top: 20px;
+      margin-bottom: 100px;
+
+      div {
+        margin-bottom: 40px;
+        font-size: 25px;
+        color: $green-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .button {
+        width: 255px;
+        margin-top: 10px;
+      }
+    }
+
+
+
+    .favourite-products {
+
+
+    }
+
+
+  }
+}

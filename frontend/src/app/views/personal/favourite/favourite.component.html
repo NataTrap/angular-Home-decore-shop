@@ -1,0 +1,36 @@
+<div class="favourite">
+  <div class="container">
+    <div class="favourite-title">Избранное</div>
+
+    <div class="favourite-empty" *ngIf="!products || (products && products.length === 0)">
+      <div>В избранном нет товаров</div>
+      <button class="button" routerLink="/catalog">В каталог</button>
+    </div>
+
+    <div class="favourite-products" *ngIf="products && products.length > 0">
+<!--      <div class="favourite-product" *ngFor="let product of products">-->
+<!--        <div class="favourite-product-image" style="background-image: url({{serverStaticPath + product.image}})"></div>-->
+<!--        <div class="favourite-product-name">{{product.name}}</div>-->
+<!--        <div class="favourite-product-price">{{product.price}} BYN</div>-->
+        <add-to-cart (productForRemove)="removeFromFavourites($event)" [countInCart]="product.countInCart" [product]="product" *ngFor="let product of products"></add-to-cart>
+<!--        <div class="favourite-product-action">-->
+<!--          <button class="button"  *ngIf="!countInCart" (click)="addToCart()">В корзину</button>-->
+<!--          <button class="button button-transparent button-in-cart" *ngIf="countInCart"  (click)="removeFromCartFunc()">-->
+<!--            <span>В корзине</span>-->
+<!--            <span>Удалить</span>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <count-selector [count]="count" (onCountChange)="updateCount($event)" ></count-selector>-->
+
+
+<!--        <div class="favourite-product-remove" (click)="removeFromFavourites()">-->
+<!--          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--            <line x1="0.935622" y1="0.649902" x2="12.9564" y2="12.6707" stroke="#A8ABA7" stroke-linecap="round"/>-->
+<!--            <line x1="12.9238" y1="0.629958" x2="0.903013" y2="12.6508" stroke="#A8ABA7" stroke-linecap="round"/>-->
+<!--          </svg>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+
+
